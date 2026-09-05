@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CircoPan — Circular Composite Panels from Textile Waste</title>
+<meta name="description" content="CircoPan transforms industrial textile waste into next-generation circular composite panels — a wood-free, low-carbon alternative for construction.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap');
+
+  :root {
+    --ink: #221E1A;
+    --clay: #B5502E;
+    --sand: #EDE9E0;
+    --panel: #DCD4C2;
+    --olive: #5C6B54;
+    --line: rgba(34, 30, 26, 0.14);
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--sand);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    line-height: 1.08;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  a { color: inherit; }
+
+  .wrap {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  header.site {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  header.site .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mark {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: -0.01em;
+  }
+
+  .mark span { color: var(--clay); }
+
+  nav.site a {
+    text-decoration: none;
+    font-size: 0.92rem;
+    color: var(--ink);
+    margin-left: 28px;
+    opacity: 0.75;
+  }
+
+  nav.site a:hover { opacity: 1; }
+
+  .hero {
+    padding: 96px 0 88px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .hero .eyebrow {
+    font-size: 0.95rem;
+    color: var(--olive);
+    margin-bottom: 22px;
+    max-width: 40ch;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.4rem, 5.2vw, 4rem);
+    max-width: 16ch;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--clay);
+  }
+
+  .hero .lede {
+    margin-top: 28px;
+    font-size: 1.18rem;
+    max-width: 58ch;
+    color: rgba(34,30,26,0.82);
+  }
+
+  .flow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 48px;
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+    flex-wrap: wrap;
+  }
+
+  .flow .step {
+    padding: 10px 18px;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    background: var(--panel);
+  }
+
+  .flow .arrow { color: var(--clay); font-size: 1.2rem; }
+
+  section {
+    padding: 76px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  section .kicker {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--olive);
+    margin-bottom: 14px;
+    display: none;
+  }
+
+  section h2 {
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    max-width: 22ch;
+    margin-bottom: 26px;
+  }
+
+  section p {
+    max-width: 66ch;
+    font-size: 1.05rem;
+    color: rgba(34,30,26,0.85);
+  }
+
+  section p + p { margin-top: 18px; }
+
+  .status-line {
+    margin-top: 40px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+
+  .status-line div { max-width: 26ch; }
+
+  .status-line .num {
+    font-family: 'Fraunces', serif;
+    font-size: 1.6rem;
+    color: var(--clay);
+  }
+
+  .status-line .label {
+    font-size: 0.92rem;
+    color: rgba(34,30,26,0.7);
+    margin-top: 4px;
+  }
+
+  footer.site {
+    padding: 64px 0 56px;
+  }
+
+  footer.site h2 {
+    font-size: clamp(1.5rem, 2.8vw, 1.9rem);
+    margin-bottom: 32px;
+    max-width: 24ch;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 28px 40px;
+  }
+
+  .contact-grid dt {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--olive);
+    margin-bottom: 6px;
+  }
+
+  .contact-grid dd {
+    margin: 0;
+    font-size: 1.05rem;
+  }
+
+  .contact-grid a { text-decoration: none; border-bottom: 1px solid var(--clay); }
+
+  .foot-note {
+    margin-top: 56px;
+    font-size: 0.85rem;
+    color: rgba(34,30,26,0.55);
+  }
+
+  @media (max-width: 640px) {
+    .hero { padding: 64px 0 56px; }
+    section { padding: 56px 0; }
+    nav.site a { margin-left: 16px; font-size: 0.85rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <div class="mark">Circo<span>Pan</span></div>
+    <nav class="site">
+      <a href="#mission">Mission</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Circular composite panels</div>
+    <h1>Textile waste, <em>rebuilt</em> as structural panel.</h1>
+    <p class="lede">CircoPan upcycles low-bulk-density industrial textile fines and secondary polypropylene into high-performance, wood-free composite panels — a low-carbon alternative to OSB for construction.</p>
+    <div class="flow">
+      <span class="step">Textile fines</span>
+      <span class="arrow">→</span>
+      <span class="step">Recycled PP</span>
+      <span class="arrow">→</span>
+      <span class="step">Composite panel</span>
+    </div>
+  </div>
+</section>
+
+<section id="mission">
+  <div class="wrap">
+    <h2>Closing the loop between textile waste and sustainable construction</h2>
+    <p>Our mission is to eliminate industrial textile waste by upcycling low-bulk-density fiber fines and secondary polymers into high-performance, wood-free structural panels. We bridge the gap between textile circularity and sustainable construction by replacing resource-intensive materials with engineered, low-carbon composite solutions — driving Europe's twin green and digital transition.</p>
+    <p>CircoPan is actively conducting industrial scaling trials to upcycle secondary textile dust and technical fiber fractions into high-performance circular composite panels.</p>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <h2>From lab validation to pilot production</h2>
+    <p>Our official digital platform, technical datasheets, and commercial documentation are currently in active development to support our upcoming pilot launch.</p>
+    <div class="status-line">
+      <div>
+        <div class="num">TRL 5 → 6</div>
+        <div class="label">Advancing from lab-proven specimens to continuous pilot compounding and sheet pressing</div>
+      </div>
+      <div>
+        <div class="num">50/40/10</div>
+        <div class="label">Composite ratio: textile fines / recycled polypropylene / functional additives</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site" id="contact">
+  <div class="wrap">
+    <h2>Get in touch</h2>
+    <dl class="contact-grid">
+      <div>
+        <dt>Entity</dt>
+        <dd>İbrahim Kabak (CircoPan)</dd>
+      </div>
+      <div>
+        <dt>Role</dt>
+        <dd>Founder &amp; Project Manager</dd>
+      </div>
+      <div>
+        <dt>Location</dt>
+        <dd>Bursa, Türkiye</dd>
+      </div>
+      <div>
+        <dt>Email</dt>
+        <dd><a href="mailto:ibrahim@circopan.com">ibrahim@circopan.com</a></dd>
+      </div>
+      <div>
+        <dt>Mobile</dt>
+        <dd>+90 532 312 4203</dd>
+      </div>
+    </dl>
+    <div class="foot-note">© 2026 CircoPan · İbrahim Kabak</div>
+  </div>
+</footer>
+
+</body>
+</html>
